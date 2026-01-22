@@ -102,7 +102,7 @@ const Navbar = () => {
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Avatar
             alt="User Avatar"
-            src="/static/images/avatar/1.jpg"
+            src=""
             className="cursor-pointer ring-2 ring-white/20 hover:ring-white/40 transition-all duration-300"
           />
         </motion.div>
