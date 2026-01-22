@@ -1,17 +1,10 @@
 "use client";
 import { AnimatePresence, motion } from "motion/react";
-import SchoolIcon from "@mui/icons-material/School";
 import BookIcon from "@mui/icons-material/Book";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import QuizIcon from "@mui/icons-material/Quiz";
-import PeopleIcon from "@mui/icons-material/People";
-import StarIcon from "@mui/icons-material/Star";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import Link from "next/link";
 
 // components
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
 import Features from "./components/Features";
 import Stats from "./components/Stats";
 

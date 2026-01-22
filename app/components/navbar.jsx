@@ -2,19 +2,12 @@
 import { useState, useEffect } from "react";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SchoolIcon from "@mui/icons-material/School";
-import ClassIcon from "@mui/icons-material/Class";
-import BookIcon from "@mui/icons-material/Book";
-import QuizIcon from "@mui/icons-material/Quiz";
 import Badge from "@mui/material/Badge";
-import MailIcon from "@mui/icons-material/Mail";
 import Avatar from "@mui/material/Avatar";
 import Link from "next/link";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import SearchIcon from "@mui/icons-material/Search";
 import { motion, AnimatePresence } from "motion/react";
 
 const Navbar = () => {
