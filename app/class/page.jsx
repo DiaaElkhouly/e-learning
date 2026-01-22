@@ -244,16 +244,15 @@ const Page = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <Link href="/">
-              <motion.button
-                whileHover={{ scale: 1.05, x: -5 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary mb-6 inline-flex items-center gap-2"
-              >
-                <ArrowBackIcon />
-                العودة للصفحة الرئيسية
-              </motion.button>
-            </Link>
+            <motion.a
+              href="/"
+              whileHover={{ scale: 1.05, x: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-secondary mb-6 inline-flex items-center gap-2"
+            >
+              <ArrowBackIcon />
+              العودة للصفحة الرئيسية
+            </motion.a>
             <h1 className="text-4xl font-bold text-gray-800 mb-2">
               الصفوف الدراسية
             </h1>
@@ -314,11 +313,12 @@ const Page = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Link href={`/class?grade=${index + 1}`}>
-                    <button className="btn-primary w-full text-lg font-semibold py-3">
-                      دخول الصف
-                    </button>
-                  </Link>
+                  <a
+                    href={`/class?grade=${index + 1}`}
+                    className="btn-primary w-full text-lg font-semibold py-3 inline-block text-center"
+                  >
+                    دخول الصف
+                  </a>
                 </motion.div>
               </motion.div>
             ))}
@@ -368,16 +368,15 @@ const Page = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <Link href="/">
-            <motion.button
-              whileHover={{ scale: 1.05, x: -5 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-secondary mb-6 inline-flex items-center gap-2"
-            >
-              <ArrowBackIcon />
-              العودة للصفحة الرئيسية
-            </motion.button>
-          </Link>
+          <motion.a
+            href="/"
+            whileHover={{ scale: 1.05, x: -5 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn-secondary mb-6 inline-flex items-center gap-2"
+          >
+            <ArrowBackIcon />
+            العودة للصفحة الرئيسية
+          </motion.a>
           <h1 className="text-4xl font-bold text-gray-300 mb-2">
             المواد الدراسية
           </h1>
@@ -392,7 +391,6 @@ const Page = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {subjects.map((subject, index) => {
-            const IconComponent = subject.icon;
             return (
               <motion.div
                 key={index}
@@ -410,9 +408,7 @@ const Page = () => {
                     <motion.div
                       whileHover={{ rotate: 10, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <IconComponent className={`text-3xl ${subject.color}`} />
-                    </motion.div>
+                    ></motion.div>
                     <h2 className="text-xl font-bold text-gray-800">
                       {subject.name}
                     </h2>
@@ -436,27 +432,25 @@ const Page = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Link
+                    <a
                       href={`/material?subject=${encodeURIComponent(subject.name)}&grade=${grade}`}
+                      className="btn-primary w-full text-base font-semibold py-3 flex items-center justify-center gap-2 group-hover:shadow-lg inline-block text-center"
                     >
-                      <button className="btn-primary w-full text-base font-semibold py-3 flex items-center justify-center gap-2 group-hover:shadow-lg ">
-                        <BookIcon fontSize="small" />
-                        المحاضرات والمواد
-                      </button>
-                    </Link>
+                      <BookIcon fontSize="small" />
+                      المحاضرات والمواد
+                    </a>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Link
+                    <a
                       href={`/quiz?subject=${encodeURIComponent(subject.name)}&grade=${grade}`}
+                      className="btn-secondary w-full text-base font-semibold py-3 flex items-center justify-center gap-2 border-2 border-green-200 text-green-700 hover:bg-green-600 hover:text-white hover:border-green-600 inline-block text-center"
                     >
-                      <button className="btn-secondary w-full text-base font-semibold py-3 flex items-center justify-center gap-2 border-2 border-green-200 text-green-700 hover:bg-green-600 hover:text-white hover:border-green-600">
-                        <QuizIcon fontSize="small" />
-                        الاختبارات والتمارين
-                      </button>
-                    </Link>
+                      <QuizIcon fontSize="small" />
+                      الاختبارات والتمارين
+                    </a>
                   </motion.div>
                 </div>
               </motion.div>

@@ -22,8 +22,6 @@ const Page = () => {
       type: "video",
       duration: "45 دقيقة",
       description: "مقدمة شاملة للموضوع الأساسي مع شرح مفصل للمفاهيم الأساسية",
-      views: 245,
-      rating: 4.8,
       color: "text-red-600",
       bgColor: "bg-red-50",
       borderColor: "border-red-200",
@@ -34,8 +32,6 @@ const Page = () => {
       type: "video",
       duration: "50 دقيقة",
       description: "شرح مفصل للنقاط الرئيسية والتطبيقات العملية",
-      views: 189,
-      rating: 4.6,
       color: "text-red-600",
       bgColor: "bg-red-50",
       borderColor: "border-red-200",
@@ -46,8 +42,6 @@ const Page = () => {
       type: "pdf",
       pages: "15 صفحة",
       description: "ملخص شامل لجميع المحاضرات مع النقاط الرئيسية والأمثلة",
-      downloads: 156,
-      rating: 4.9,
       color: "text-blue-600",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
@@ -58,8 +52,6 @@ const Page = () => {
       type: "pdf",
       pages: "10 صفحات",
       description: "أسئلة متنوعة للتدريب والمراجعة مع الإجابات المفصلة",
-      downloads: 203,
-      rating: 4.7,
       color: "text-blue-600",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
@@ -201,24 +193,6 @@ const Page = () => {
               <p className="text-gray-700 mb-4 leading-relaxed">
                 {material.description}
               </p>
-
-              {/* Stats */}
-              <div className="flex items-center justify-between mb-4 text-sm text-gray-600">
-                <div className="flex items-center gap-4">
-                  {material.type === "video" ? (
-                    <span className="flex items-center gap-1">
-                      👁️ {material.views} مشاهدة
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-1">
-                      ⬇️ {material.downloads} تحميل
-                    </span>
-                  )}
-                  <span className="flex items-center gap-1">
-                    ⭐ {material.rating}
-                  </span>
-                </div>
-              </div>
 
               {/* Action Button */}
               <motion.button

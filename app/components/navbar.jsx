@@ -15,10 +15,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const links = [
-    { id: "1", title: "الرئيسية", path: "/" },
-    { id: "2", title: "الصفوف", path: "/class" },
-    { id: "3", title: "المواد", path: "/material" },
-    { id: "4", title: "الاختبارات", path: "/quiz" },
+    { id: "1", title: "الرئيسية", path: "" },
+    { id: "2", title: "الصفوف", path: "class" },
+    { id: "3", title: "المواد", path: "material" },
+    { id: "4", title: "الاختبارات", path: "quiz" },
   ];
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const Navbar = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
               <Link
-                href={link.path}
+                href={`/${link.path}`}
                 className={`font-semibold text-lg px-4 py-2 rounded-lg flex items-center space-x-2 space-x-reverse transition-all duration-300 transform hover:scale-105 ${
                   isScrolled
                     ? "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
@@ -121,7 +121,6 @@ const Navbar = () => {
           >
             <div className="px-4 py-4 space-y-2">
               {links.map((link, index) => {
-                const IconComponent = link.icon;
                 return (
                   <motion.div
                     key={link.id}
@@ -130,11 +129,10 @@ const Navbar = () => {
                     transition={{ delay: index * 0.1, duration: 0.3 }}
                   >
                     <Link
-                      href={link.path}
+                      href={`/${link.path}`}
                       onClick={() => setIsMenuOpen(false)}
                       className="flex items-center space-x-3 space-x-reverse text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-4 py-3 rounded-lg transition-all duration-300"
                     >
-                      <IconComponent />
                       <span className="font-medium">{link.title}</span>
                     </Link>
                   </motion.div>

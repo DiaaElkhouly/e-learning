@@ -152,11 +152,12 @@ export default function Home() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
-                      <Link href={`/class?grade=${index + 1}`}>
-                        <button className="btn-primary w-full text-lg font-semibold py-3">
-                          دخول الصف
-                        </button>
-                      </Link>
+                      <a
+                        href={`/class?grade=${index + 1}`}
+                        className="btn-primary w-full text-lg font-semibold py-3 inline-block text-center"
+                      >
+                        دخول الصف
+                      </a>
                     </motion.div>
                   </motion.div>
                 ))}
