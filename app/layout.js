@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
     <html lang="ar" dir="rtl">
       <body className={`${arabic.variable} antialiased min-h-screen`}>
         <Navbar />
-
         {children}
         <Footer />
       </body>

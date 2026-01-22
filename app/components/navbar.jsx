@@ -22,10 +22,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const links = [
-    { id: "1", title: "الرئيسية", icon: ClassIcon, path: "/" },
-    { id: "2", title: "الصفوف", icon: ClassIcon, path: "/class" },
-    { id: "3", title: "المواد", icon: BookIcon, path: "/material" },
-    { id: "4", title: "الاختبارات", icon: QuizIcon, path: "/quiz" },
+    { id: "1", title: "الرئيسية", path: "/" },
+    { id: "2", title: "الصفوف", path: "/class" },
+    { id: "3", title: "المواد", path: "/material" },
+    { id: "4", title: "الاختبارات", path: "/quiz" },
   ];
 
   useEffect(() => {
@@ -66,7 +66,6 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8 space-x-reverse">
         {links.map((link, index) => {
-          const IconComponent = link.icon;
           return (
             <motion.div
               key={link.id}
@@ -82,7 +81,6 @@ const Navbar = () => {
                     : "text-white hover:text-yellow-300 hover:bg-blue-700 hover:shadow-md"
                 }`}
               >
-                <IconComponent />
                 <span>{link.title}</span>
               </Link>
             </motion.div>
