@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./components/navbar";
-import Footer from "./components/Footer";
+import Navbar from "./()components/navbar";
+import Footer from "./()components/Footer";
 
 const arabic = localFont({
   src: "./fonts/Simplified-Arabic-Regular.ttf",
@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
       <body className={`${arabic.variable} antialiased min-h-screen`}>
-        {children}
         <Navbar />
+        {children}
         <Footer />
       </body>
     </html>

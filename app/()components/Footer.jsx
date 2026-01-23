@@ -1,8 +1,8 @@
 import React from "react";
-import { motion } from "motion/react";
 import Link from "next/link";
 // icons
 import SchoolIcon from "@mui/icons-material/School";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-12">

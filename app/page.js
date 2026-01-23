@@ -1,12 +1,11 @@
 "use client";
-import { AnimatePresence, motion } from "motion/react";
 import BookIcon from "@mui/icons-material/Book";
 import Link from "next/link";
 
 // components
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Stats from "./components/Stats";
+import Hero from "./()components/Hero";
+import Features from "./()components/Features";
+import Stats from "./()components/Stats";
 
 export default function Home() {
   const grades = [
@@ -39,40 +38,9 @@ export default function Home() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
-    <AnimatePresence mode="wait">
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{
-          duration: 0.4,
-          ease: "easeInOut",
-        }}
-        className="relative"
-      >
+    <div>
+      <main className="relative">
         <div className="min-h-screen">
           {/* Hero Section */}
           <Hero />
@@ -83,33 +51,19 @@ export default function Home() {
           {/* Grades Section */}
           <section id="grades" className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-center mb-12"
-              >
+              <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">
                   اختر صفك الدراسي
                 </h2>
                 <p className="text-lg text-gray-600">
                   ابدأ رحلتك التعليمية مع المحتوى المناسب لمستواك
                 </p>
-              </motion.div>
+              </div>
 
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-8"
-              >
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {grades.map((grade, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
                     className={`card p-8 text-center relative overflow-hidden`}
                   >
                     {/* Background Pattern */}
@@ -148,24 +102,21 @@ export default function Home() {
                     </div>
 
                     {/* Action Button */}
-                    <motion.div
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <a
+                    <div>
+                      <Link
                         href={`/class?grade=${index + 1}`}
                         className="btn-primary w-full text-lg font-semibold py-3 inline-block text-center"
                       >
                         دخول الصف
-                      </a>
-                    </motion.div>
-                  </motion.div>
+                      </Link>
+                    </div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </section>
         </div>
-      </motion.main>
-    </AnimatePresence>
+      </main>
+    </div>
   );
 }
