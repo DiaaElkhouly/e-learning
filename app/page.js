@@ -1,43 +1,12 @@
-"use client";
-import BookIcon from "@mui/icons-material/Book";
 import Link from "next/link";
+import Hero from "../components/Hero";
+import Features from "../components/Features";
+import Stats from "../components/Stats";
+import { grades } from "@/lib/data/grades";
+import { BookIcon } from "@/components/icons";
 
-// components
-import Hero from "./()components/Hero";
-import Features from "./()components/Features";
-import Stats from "./()components/Stats";
-
+// Server Component for better performance
 export default function Home() {
-  const grades = [
-    {
-      title: "الصف الأول الثانوي",
-      subjects: 9,
-      lectures: 12,
-      color: "from-blue-600 to-blue-800",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200",
-      icon: "🎓",
-    },
-    {
-      title: "الصف الثاني الثانوي",
-      subjects: 7,
-      lectures: 11,
-      color: "from-green-600 to-green-800",
-      bgColor: "bg-green-50",
-      borderColor: "border-green-200",
-      icon: "📚",
-    },
-    {
-      title: "الصف الثالث الثانوي",
-      subjects: 7,
-      lectures: 15,
-      color: "from-purple-600 to-purple-800",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200",
-      icon: "🏆",
-    },
-  ];
-
   return (
     <div>
       <main className="relative">
@@ -61,10 +30,10 @@ export default function Home() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {grades.map((grade, index) => (
+                {grades.map((grade) => (
                   <div
-                    key={index}
-                    className={`card p-8 text-center relative overflow-hidden`}
+                    key={grade.id}
+                    className="card p-8 text-center relative overflow-hidden"
                   >
                     {/* Background Pattern */}
                     <div className="absolute top-0 right-0 text-6xl opacity-10">
@@ -77,7 +46,7 @@ export default function Home() {
                     >
                       <h3 className="text-2xl font-bold mb-2">{grade.title}</h3>
                       <div className="flex justify-center">
-                        <BookIcon className="text-3xl" />
+                        <BookIcon className="w-8 h-8" />
                       </div>
                     </div>
 
@@ -104,7 +73,7 @@ export default function Home() {
                     {/* Action Button */}
                     <div>
                       <Link
-                        href={`/class?grade=${index + 1}`}
+                        href={`/class?grade=${grade.id}`}
                         className="btn-primary w-full text-lg font-semibold py-3 inline-block text-center"
                       >
                         دخول الصف
